@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .task{
+            height:100px;
+            width:150px;
+            border:solid white 2px;
+            padding:5px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body style="background-color: #212121; color: white;">
+    <div class="box">
+     
+            <input type="text" name="" id="">
+            <input type="button" value="add" onClick="display()">
+       
+    </div>
+    <div class="task-container">
+
+    </div>
+    <script>
+        // let box = document.querySelector('.box')
+        // let div = document.createElement('div')
+        // let div2 = document.createElement('div2')
+        // div2.className = 'div2'
+        // div.className = "main"
+        // div.id = "main-container"
+        // div.innerHTML = '<h2>i am child div</h2>'
+        // box.appendChild(div)
+        // box.appendChild(div2)
+        // console.log(box.children)
+        let taskContainer = document.querySelector('.task-container')
+
+        function display(){
+            let inputText = document.querySelector("input[type='text']")
+            console.log(inputText.value)
+
+            let task = document.createElement('div')
+            task.className = 'task'
+            task.innerHTML = `<p> ${inputText.value} </p>`
+            console.log(task)
+            taskContainer.appendChild(task)
+        }
+
+
+
+        </script>
+</body>
+</html>
