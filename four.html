@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="">
+    <input type="button" value="add" onclick="addList()">
+    <ul class="language">
+       
+    </ul>
+</body>
+<script>
+
+function dlt(){
+    console.log("delete")
+}
+
+function addList(){
+    let count =1
+    let val = document.querySelector("input[type='text']")
+    // console.log(val.value)
+    let ul = document.querySelector('.language')
+    let li = document.createElement('li')
+    let dltButton = document.createElement('button')
+    dltButton.textContent = 'delete'
+    dltButton.className = 'dltButton'
+    dltButton.id = `btn${count}`
+    li.appendChild(document.createTextNode(val.value))
+    dltButton.setAttribute("onClick","dlt(this)")
+    li.appendChild(dltButton)
+    ul.appendChild(li)
+    val.value = ""
+}
+function dlt(button){
+        button.parentElement.remove()
+        
+    }
+
+</script>
+</html>
