@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .canvas{
+            height:250px;
+            width:100vw;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            gap:4px;
+        }
+        .button{
+            height:50px;
+            width:50px;
+            border:solid black 1px;
+            border-radius: 5px;
+            display:inline-block;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .button:hover{
+            cursor:pointer;
+            box-shadow: 5px 5px 15px rgba(78, 78, 78, 0.4);
+
+        }
+        #grey{
+            background-color:grey;
+        }
+        #white{
+            background-color:white;
+        }
+        #blue{
+            background-color:blue;
+        }
+        #yellow{
+            background-color:yellow;
+        }
+        h4,h1{
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>color Scheme switcher</h1>
+    <div class="canvas">
+        <span class="button" id="grey" onClick="color(this)"></span>
+        <span class="button" id="white" onClick="color(this)"></span>
+        <span class="button" id="blue" onClick="color(this)"></span>
+        <span class="button" id="yellow" onClick="color(this)"></span>
+    </div>
+    <h4>click on color box to switch their </h4>
+</body>
+<script>
+    let body = document.querySelector('body')
+    let button = document.querySelectorAll(".button")
+    
+    
+    function color(element){
+        body.style.backgroundColor = element.id
+    }
+    
+</script>
+</html>
