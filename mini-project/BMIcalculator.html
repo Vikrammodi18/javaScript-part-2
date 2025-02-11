@@ -13,47 +13,72 @@
 <body>
 <div class="main">
     <h3>BMI calculator</h3>
-    <div class="calculator">
+    <form action="">
+        <label for="weight">weight:</label>
+        <input type="number" name="" id="weight" placeholder="enter weight in kg" required> <br>
+        <label for="height">height:</label>
+        <input type="number" name="" id="height" placeholder="enter height in meter" required> <br>
+        <div id="output"></div>
+        <button type="submit">calculate</button>
+    </form>
+
+
+    <!-- <div class="calculator">
         <label for="weight">weight:</label>
         <input type="number" name="" id="weight" placeholder="enter weight in kg" required> <br>
         <label for="height">height:</label>
         <input type="number" name="" id="height" placeholder="enter height in meter" required> <br>
         <div id="output"></div>
         <input type="button" id="calculate" value="calculate">
-    </div>
+    </div> -->
 </div>
 </body>
 <script>
-    let calculate = document.querySelector("#calculate")
-    let weight = document.querySelector('#weight')
-    let height = document.querySelector('#height')
-    let output = document.querySelector('#output')
+
+    let form = document.querySelector("form")
     
-    function BMI(){
-        calculate.addEventListener("click",(e)=>{
-           weightValue = Number(weight.value)
-           heightValue = Number(height.value)
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault()
+      let height = parseInt(form.children[4].value)
+      let weight = parseInt(form.children[1].value) 
+      let output = form.children[6]
+      let ans = (weight/(height*height)).toFixed(2)
+      console.log(ans)
+      output.style.display = "block"
+      output.innerHTML = `${ans}`
+    })
+
+    //type 1
+    // let calculate = document.querySelector("#calculate")
+    // let weight = document.querySelector('#weight')
+    // let height = document.querySelector('#height')
+    // let output = document.querySelector('#output')
+    
+    // function BMI(){
+    //     calculate.addEventListener("click",(e)=>{
+    //        weightValue = Number(weight.value)
+    //        heightValue = Number(height.value)
           
-            let ans = (weightValue/(heightValue * heightValue)).toFixed(2)
-            // console.log(ans)
-            output.style.display = "block"
+    //         let ans = (weightValue/(heightValue * heightValue)).toFixed(2)
+    //         // console.log(ans)
+    //         output.style.display = "block"
 
-            if(18.5>ans){
-                 output.textContent = `underWeight --- malnutrition risk---`
-            }
-            else if(18.5<=ans && ans<24.9){
-                output.textContent = `normalWeight --- low risk---`
+    //         if(18.5>ans){
+    //              output.textContent = `underWeight --- malnutrition risk---`
+    //         }
+    //         else if(18.5<=ans && ans<24.9){
+    //             output.textContent = `normalWeight --- low risk---`
 
-            }
-            else if(25<=ans && ans<=29.9){
-                output.textContent = `overWeight ---`
-            }
-           output.textContent += `BMI:${ans}`
-            weight.value=""
-            height.value=""
-        })
-    }
+    //         }
+    //         else if(25<=ans && ans<=29.9){
+    //             output.textContent = `overWeight ---`
+    //         }
+    //        output.textContent += `BMI:${ans}`
+    //         weight.value=""
+    //         height.value=""
+    //     })
+    // }
 
-    BMI()
+    // BMI()
 </script>
 </html>
