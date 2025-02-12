@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+<body style="background-color: #414141;">
+    <ul style="border:solid white 2px;" id="images">
+       <li style="border:solid red 2px;"><img width="200px" id="one"  src="https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=""></li>
+       <li><img width="200px" id="two" src="https://images.pexels.com/photos/248159/pexels-photo-248159.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=""></li>
+       <li><img width="200px" id="three" src="https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=""></li>
+       <li><img width="200px" id="four" src="https://images.pexels.com/photos/36487/above-adventure-aerial-air.jpg" alt=""></li>
+       <li><a id="google" style="color:rgb(68, 171, 255)" href="https://google.com">google</a></li>
+    </ul>
+</body>
+<script>
+    //event bubbling is the concept in which event propagate from children to parent 
+    // event capturing is the concept in which event propagate from parent to children
+    // addEventListener takes 3 argument 1. event 2.callback 3.true/false, byDefault false
+    // true is used for event capturing and disable bubbling event
+    // document.getElementById('images').addEventListener("click",function(e){
+    //     // console.log(e)
+    //     // console.log(e.target.id)
+    //     // console.log(e.clientX,e.clientY)
+    //     console.log("click inside the ul")
+    //     // alert(`${e.target}`)
+    // })
+    // document.getElementById('two').addEventListener("click",function(e){
+       
+    //     console.log("clicked inside the two")
+    // })
+    // document.getElementById("google").addEventListener("click",function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log("google clicked")
+    // })
+    document.getElementById("images").addEventListener("click",(e)=>{
+        console.log(e.target.parentNode)
+        let removeElement = e.target
+        removeElement.remove()
+        // console.log(e.target)
+    })
+</script>
+</html>
