@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:black;color:white;">
+    <div class="timer"></div>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    
+</body>
+<script>
+
+    let startButton = document.querySelector("#start")
+    let stopButton = document.querySelector("#stop")
+    let interval
+    let timer = document.querySelector('.timer')
+    let second=0,minute=0,hr,check=1000;
+    let flag = true;
+    let print = function(check){
+        
+            second++;
+            if(second/60 === 1){
+                minute++;
+                second = 0;
+            }
+            timer.innerHTML = `<span>${minute}:${second}</span>`
+        }
+  
+
+        startButton.addEventListener("click",()=>{
+           interval = setInterval(print,1000)
+        })
+       
+
+    
+        stopButton.addEventListener("click",()=>{
+            console.log("clicked stop button")
+            clearInterval(interval)
+            interval = null
+        })
+
+//     const changeName = (val)=>{
+//         document.querySelector("h1").innerHTML = "pratham"
+
+//     }
+//    let changeMe = setTimeout(changeName,2000)
+//     document.querySelector('#stop').addEventListener('click',function(){
+//         clearTimeout(changeMe)
+
+//     })
+
+    // setTimeout((val)=>{
+    //     document.querySelector("h1").innerHTML = 'Pratham'
+    // },2000)
+
+</script>
+</html>
