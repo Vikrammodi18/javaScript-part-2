@@ -35,11 +35,13 @@
     //     e.stopPropagation();
     //     console.log("google clicked")
     // })
+    console.log("start")
     document.getElementById("images").addEventListener("click",(e)=>{
         console.log(e.target.parentNode)
-        let removeElement = e.target
+        let removeElement = e.target.parentNode
         removeElement.remove()
         // console.log(e.target)
     })
+    console.log("end")
 </script>
 </html>
