@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+
+    </div>
+
+<script>
+    const url = "https://api.freeapi.app/api/v1/public/quotes"
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET",url)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            const data = this.responseText
+            const Apidata = JSON.parse(data)
+            let dataArray = Apidata.data.data
+            dataArray.forEach((val)=>{
+                console.log(val.author)
+            })
+        }
+    }
+    xhr.send()
+</script>
+</body>
+</html>
