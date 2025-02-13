@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        html,body{
+            height:100%;
+            width:100%;
+            background-color: black;
+            color:white;
+        }
+        .main{
+            height:100%;
+            width:100%;
+           display:flex;
+           align-items: center;
+           justify-content: center;
+            border:solid 2px white;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="main"></div>
+
+    <script>
+        let main = document.querySelector('.main')
+        
+        window.addEventListener('keydown',function(e){
+            console.log(e)
+            main.innerHTML = `
+            <div class = 'table'>
+            <table border=1>
+            <tr>
+              <th>key</th>
+              <th>key code</th>
+              <th>code</th>
+            </tr>
+            <tr>
+              <td>${e.key = e.key==" "?"space":e.key}</td>
+              <td>${e.keyCode}</td>
+              <td>${e.code}</td>
+            </tr>
+          </table>
+          </div>
+            `
+        })
+    </script>
+
+</body>
+</html>
